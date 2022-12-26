@@ -1,9 +1,21 @@
 .header {
-  flex: auto;
-  flex-direction: row;
-  background-color: lightgray;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(236, 236, 236);
+  padding: 15px 10px;
 }
 .mode {
 }
 .filter {
+  display: flex;
+}
+
+.title {
+  color: orange;
+  margin: 0 5px;
+}
+
+.selected {
+  border-bottom: 2px solid rgb(122, 122, 122);
+  margin-top: 3px;
 }
