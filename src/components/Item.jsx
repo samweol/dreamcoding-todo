@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { BsTrashFill } from "react-icons/bs";
 import styles from "../styles/Item.module.css";
 
-export default function Item() {
+export default function Item({ title }) {
+  const [checked, setChecked] = useState(false);
+
   return (
     <div className={styles.item}>
-      <input type="checkbox" id="checkbox" />
+      <input
+        type="checkbox"
+        id="checkbox"
+        checked={checked}
+        onChange={() => {
+          setChecked(!checked);
+        }}
+      />
       <label htmlFor="checkbox" className={styles.title}>
-        강의 보기
+        {title}
       </label>
       <button className={styles.button}>
         <BsTrashFill />
