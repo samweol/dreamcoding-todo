@@ -1,0 +1,11 @@
+.lightContainer {
+  background-color: wheat;
+  width: 350px;
+  min-height: 400px;
+  border-radius: 30px;
+  margin: 0 auto;
+}
+
+.darkContainer {
+  background-color: darkblue;
+}

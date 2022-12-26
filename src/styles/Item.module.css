@@ -1,0 +1,15 @@
+.button {
+  background-color: lightgray;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  border: none;
+}
+
+.title {
+  color: dimgrey;
+}
+
+.item {
+  flex: auto;
+}
