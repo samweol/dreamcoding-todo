@@ -4,12 +4,26 @@
   width: 25px;
   height: 25px;
   border: none;
+  flex: 1;
+}
+
+.button:hover {
+  cursor: pointer;
 }
 
 .title {
   color: dimgrey;
+  flex: 20;
+  padding: 0px 4px;
 }
 
 .item {
-  flex: auto;
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  padding: 5px 10px;
+}
+
+#checkbox {
+  flex: 1;
 }
