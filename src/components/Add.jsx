@@ -9,10 +9,9 @@ export default function Add({ list, setList }) {
   };
 
   const addToDoList = () => {
-    setList([...list, title]);
+    setList([...list, { title: title, isChecked: false }]);
   };
 
-  console.log(title);
   return (
     <div className={styles.addContainer}>
       <input

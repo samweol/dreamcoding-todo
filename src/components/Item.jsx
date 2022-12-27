@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { BsTrashFill } from "react-icons/bs";
 import styles from "../styles/Item.module.css";
 
-export default function Item({ title }) {
+export default function Item({ title, isChecked }) {
   const [checked, setChecked] = useState(false);
 
   return (

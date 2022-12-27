@@ -6,12 +6,12 @@ import Header from "./components/Header";
 import Item from "./components/Item";
 
 function App() {
-  const [list, setList] = useState([]);
+  const [list, setList] = useState([]); //todo list
   return (
     <Container>
       <Header />
       {list.map((item) => {
-        return <Item title={item} />;
+        return <Item isChecked={item.isChecked} title={item.title} />;
       })}
       <Add list={list} setList={setList} />
     </Container>
@@ -19,3 +19,5 @@ function App() {
 }
 
 export default App;
+
+// list : {title, isChecked}
