@@ -9,7 +9,7 @@ export default function Header() {
   return (
     <div className={darkMode ? styles.dark : styles.light}>
       <div className={styles.mode} onClick={toggleDarkMode}>
-        {darkMode ? <BsFillSunFill /> : <BsFillMoonFill />}
+        {darkMode ? <BsFillSunFill color="white" /> : <BsFillMoonFill />}
       </div>
       <div className={styles.filter}>
         <span>
