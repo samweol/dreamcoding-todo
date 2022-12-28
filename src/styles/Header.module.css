@@ -28,11 +28,13 @@
 .lightTitle {
   color: orange;
   margin: 0 5px;
+  cursor: pointer;
 }
 
 .darkTitle {
   color: rgb(132, 148, 215);
   margin: 0 5px;
+  cursor: pointer;
 }
 
 .selected {
