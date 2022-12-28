@@ -5,6 +5,7 @@
   padding: 15px 10px;
 }
 .mode {
+  cursor: pointer;
 }
 .filter {
   display: flex;
