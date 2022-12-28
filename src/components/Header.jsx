@@ -7,21 +7,27 @@ export default function Header() {
   const [selected, setSelected] = useState(false);
   const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
   return (
-    <div className={styles.header}>
+    <div className={darkMode ? styles.dark : styles.light}>
       <div className={styles.mode} onClick={toggleDarkMode}>
         {darkMode ? <BsFillSunFill /> : <BsFillMoonFill />}
       </div>
       <div className={styles.filter}>
         <span>
-          <div className={styles.title}>All</div>
+          <div className={darkMode ? styles.darkTitle : styles.lightTitle}>
+            All
+          </div>
           {selected && <div className={styles.selected}></div>}
         </span>
         <span>
-          <div className={styles.title}>Active</div>
+          <div className={darkMode ? styles.darkTitle : styles.lightTitle}>
+            Active
+          </div>
           {selected && <div className={styles.selected}></div>}
         </span>
         <span>
-          <div className={styles.title}>Completed</div>
+          <div className={darkMode ? styles.darkTitle : styles.lightTitle}>
+            Completed
+          </div>
           {selected && <div className={styles.selected}></div>}
         </span>
       </div>

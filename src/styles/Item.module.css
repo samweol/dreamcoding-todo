@@ -1,5 +1,14 @@
-.button {
+.lightButton {
   background-color: lightgray;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  border: none;
+  flex: 1;
+}
+
+.darkButton {
+  background-color: rgb(132, 148, 215);
   border-radius: 50%;
   width: 25px;
   height: 25px;
@@ -12,6 +21,18 @@
 }
 
 .title {
+  color: dimgrey;
+  flex: 20;
+  padding: 0px 4px;
+}
+
+.darkTitle {
+  color: white;
+  flex: 20;
+  padding: 0px 4px;
+}
+
+.lightTitle {
   color: dimgrey;
   flex: 20;
   padding: 0px 4px;

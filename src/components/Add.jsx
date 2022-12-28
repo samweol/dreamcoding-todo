@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styles from "../styles/Add.module.css";
+import { DarkModeContext } from "../context/DarkModeContext";
 
 export default function Add({ list, setList }) {
   const [title, setTitle] = useState("");
+  const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
 
   const handleChange = (e) => {
     setTitle(e.target.value);
@@ -15,7 +17,7 @@ export default function Add({ list, setList }) {
   };
 
   return (
-    <div className={styles.addContainer}>
+    <div className={darkMode ? styles.dark : styles.light}>
       <input
         type="text"
         className={styles.textField}
@@ -23,7 +25,10 @@ export default function Add({ list, setList }) {
         onChange={handleChange}
         id="textField"
       />
-      <button className={styles.button} onClick={addToDoList}>
+      <button
+        className={darkMode ? styles.darkButton : styles.lightButton}
+        onClick={addToDoList}
+      >
         Add
       </button>
     </div>
