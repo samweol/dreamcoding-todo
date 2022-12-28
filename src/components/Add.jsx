@@ -10,6 +10,8 @@ export default function Add({ list, setList }) {
 
   const addToDoList = () => {
     setList([...list, { title: title, isChecked: false }]);
+    const input = document.getElementById("textField");
+    input.value = null;
   };
 
   return (
@@ -19,6 +21,7 @@ export default function Add({ list, setList }) {
         className={styles.textField}
         placeholder="Add Todo"
         onChange={handleChange}
+        id="textField"
       />
       <button className={styles.button} onClick={addToDoList}>
         Add
