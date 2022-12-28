@@ -6,19 +6,14 @@ import Header from "./components/Header";
 import Item from "./components/Item";
 
 function App() {
-  const [list, setList] = useState([]); //todo list
+  const [list, setList] = useState(initialList); //todo list
+
   return (
     <div>
       <Container>
         <Header />
         {list.map((item) => {
-          return (
-            <Item
-              isChecked={item.isChecked}
-              title={item.title}
-              setList={setList}
-            />
-          );
+          return <Item item={item} list={list} setList={setList} />;
         })}
         <Add list={list} setList={setList} />
       </Container>
@@ -29,3 +24,18 @@ function App() {
 export default App;
 
 // list : {title, isChecked}
+
+const initialList = [
+  {
+    title: "공부하기",
+    isChecked: false,
+  },
+  {
+    title: "강의듣기",
+    isChecked: false,
+  },
+  {
+    title: "복습하기",
+    isChecked: true,
+  },
+];
