@@ -3,6 +3,10 @@ import { BsTrashFill } from "react-icons/bs";
 import styles from "../styles/Item.module.css";
 
 export default function Item({ item, list, setList }) {
+  const deleteItem = () => {
+    const tempList = list.filter((i) => i.title !== item.title);
+    setList(tempList);
+  };
   return (
     <div className={styles.item}>
       <input
@@ -21,7 +25,7 @@ export default function Item({ item, list, setList }) {
       >
         {item.title}
       </label>
-      <button className={styles.button} onClick={() => {}}>
+      <button className={styles.button} onClick={deleteItem}>
         <BsTrashFill />
       </button>
     </div>
