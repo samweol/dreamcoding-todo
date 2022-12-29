@@ -4,7 +4,7 @@ import { DarkModeContext } from "../context/DarkModeContext";
 
 export default function Add({ list, setList }) {
   const [title, setTitle] = useState("");
-  const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
+  const { darkMode } = useContext(DarkModeContext);
 
   const handleChange = (e) => {
     setTitle(e.target.value);

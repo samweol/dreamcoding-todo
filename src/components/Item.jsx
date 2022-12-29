@@ -4,7 +4,7 @@ import styles from "../styles/Item.module.css";
 import { DarkModeContext } from "../context/DarkModeContext";
 
 export default function Item({ item, list, setList }) {
-  const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
+  const { darkMode } = useContext(DarkModeContext);
   const deleteItem = () => {
     const tempList = list.filter((i) => i.title !== item.title);
     setList(tempList);
