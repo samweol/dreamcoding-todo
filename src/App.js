@@ -1,14 +1,20 @@
-import { useState } from "react";
-import "./App.css";
+import { useEffect, useState } from "react";
 import Add from "./components/Add";
 import Container from "./components/Container";
 import Header from "./components/Header";
 import Item from "./components/Item";
 import { DarkModeProvider } from "./context/DarkModeContext";
+import styles from "./App.module.css";
 
 function App() {
-  const [list, setList] = useState(initialList); //todo list
+  const [list, setList] = useState(
+    JSON.parse(localStorage.getItem("initialList"))
+  ); //todo list
   const [filterTitle, setFilterTitle] = useState("All");
+
+  useEffect(() => {
+    localStorage.setItem("initialList", JSON.stringify(list));
+  }, [list]);
 
   let tempList = list;
   if (filterTitle === "All") {
@@ -20,7 +26,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className={styles.container}>
       <DarkModeProvider>
         <Container>
           <Header setFilterTitle={setFilterTitle} filterTitle={filterTitle} />
@@ -38,17 +44,17 @@ export default App;
 
 // list : {title, isChecked}
 
-const initialList = [
-  {
-    title: "공부하기",
-    isChecked: false,
-  },
-  {
-    title: "강의듣기",
-    isChecked: false,
-  },
-  {
-    title: "복습하기",
-    isChecked: true,
-  },
-];
+// const initialList = [
+//   {
+//     title: "공부하기",
+//     isChecked: false,
+//   },
+//   {
+//     title: "강의듣기",
+//     isChecked: false,
+//   },
+//   {
+//     title: "복습하기",
+//     isChecked: true,
+//   },
+// ];
