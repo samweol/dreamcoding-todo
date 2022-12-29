@@ -1,10 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
 import { DarkModeContext } from "../context/DarkModeContext";
 import styles from "../styles/Header.module.css";
 
-export default function Header({ list, setList }) {
-  const [selected, setSelected] = useState(false);
+export default function Header({ filterTitle, setFilterTitle }) {
   const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
   return (
     <div className={darkMode ? styles.dark : styles.light}>
@@ -14,37 +13,35 @@ export default function Header({ list, setList }) {
       <div className={styles.filter}>
         <span
           onClick={() => {
-            setList(list);
+            setFilterTitle("All");
           }}
         >
           <div className={darkMode ? styles.darkTitle : styles.lightTitle}>
             All
           </div>
-          {selected && <div className={styles.selected}></div>}
+          {filterTitle === "All" && <div className={styles.selected}></div>}
         </span>
         <span
           onClick={() => {
-            const activeList = list.filter((item) => item.isChecked === false);
-            setList(activeList);
+            setFilterTitle("Active");
           }}
         >
           <div className={darkMode ? styles.darkTitle : styles.lightTitle}>
             Active
           </div>
-          {selected && <div className={styles.selected}></div>}
+          {filterTitle === "Active" && <div className={styles.selected}></div>}
         </span>
         <span
           onClick={() => {
-            const completedList = list.filter(
-              (item) => item.isChecked === true
-            );
-            setList(completedList);
+            setFilterTitle("Completed");
           }}
         >
           <div className={darkMode ? styles.darkTitle : styles.lightTitle}>
             Completed
           </div>
-          {selected && <div className={styles.selected}></div>}
+          {filterTitle === "Completed" && (
+            <div className={styles.selected}></div>
+          )}
         </span>
       </div>
     </div>

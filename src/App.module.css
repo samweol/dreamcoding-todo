@@ -1,0 +1,7 @@
+.container {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(18, 4, 55);
+  opacity: 0.8;
+}

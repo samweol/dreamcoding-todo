@@ -1,3 +1,4 @@
+/* 지우기 버튼 스타일링 */
 .lightButton {
   background-color: lightgray;
   border-radius: 50%;
@@ -7,7 +8,6 @@
   flex: 1;
   cursor: pointer;
 }
-
 .darkButton {
   background-color: rgb(132, 148, 215);
   border-radius: 50%;
@@ -15,27 +15,21 @@
   height: 25px;
   border: none;
   flex: 1;
+}
   cursor: pointer;
 }
 
-.title {
-  color: dimgrey;
-  flex: 20;
-  padding: 0px 4px;
-}
-
+/* 아이템 이름 스타일링 */
 .darkTitle {
   color: white;
   flex: 20;
   padding: 0px 4px;
 }
-
 .lightTitle {
   color: dimgrey;
   flex: 20;
   padding: 0px 4px;
 }
-
 .checked {
   color: rgb(167, 163, 163);
   flex: 20;
@@ -43,12 +37,12 @@
   text-decoration: line-through;
 }
 
+/* 아이템 전반 스타일링 */
 .item {
   display: flex;
   align-items: center;
   padding: 5px 10px;
 }
-
 #checkbox {
   flex: 1;
 }

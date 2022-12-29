@@ -1,14 +1,10 @@
-.header {
-  display: flex;
-  justify-content: space-between;
-  background-color: rgb(236, 236, 236);
-  padding: 15px 10px;
-}
+/* header 스타일링 */
 .dark {
   display: flex;
   justify-content: space-between;
   background-color: rgb(30, 30, 45);
   padding: 15px 10px;
+  border-radius: 20px 20px 0px 0px;
 }
 
 .light {
@@ -16,11 +12,15 @@
   justify-content: space-between;
   background-color: rgb(236, 236, 236);
   padding: 15px 10px;
+  border-radius: 20px 20px 0px 0px;
 }
 
+/* 다크모드/나이트모드 스타일링 */
 .mode {
   cursor: pointer;
 }
+
+/* 필터 스타일링 */
 .filter {
   display: flex;
 }
@@ -38,6 +38,6 @@
 }
 
 .selected {
-  border-bottom: 2px solid rgb(122, 122, 122);
+  border-bottom: 2px solid rgb(173, 172, 172);
   margin-top: 3px;
 }
