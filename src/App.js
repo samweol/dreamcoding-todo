@@ -30,7 +30,7 @@ function App() {
       <DarkModeProvider>
         <Container>
           <Header setFilterTitle={setFilterTitle} filterTitle={filterTitle} />
-          {tempList.length > 0
+          {tempList
             ? tempList.map((item) => {
                 return <Item item={item} list={list} setList={setList} />;
               })
