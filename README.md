@@ -6,6 +6,9 @@
 
 기간으로 보면 3일정도 소요되었지만 총 투자한 시간은 3-4시간 정도 되는 것 같습니다!
 
+## 배포
+https://stellar-chimera-c11f0c.netlify.app
+
 ## 개발환경
 
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white"/>
