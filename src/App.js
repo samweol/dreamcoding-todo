@@ -32,10 +32,12 @@ function App() {
           <Header setFilterTitle={setFilterTitle} filterTitle={filterTitle} />
           {tempList
             ? tempList.map((item) => {
-                return <Item item={item} list={list} setList={setList} />;
+                return (
+                  <Item item={item} list={list ? list : []} setList={setList} />
+                );
               })
             : null}
-          <Add list={list} setList={setList} />
+          <Add list={list ? list : []} setList={setList} />
         </Container>
       </DarkModeProvider>
     </div>
