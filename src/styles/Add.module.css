@@ -6,6 +6,7 @@
   font-weight: bold;
   padding: 7px 15px;
   border-radius: 0px 5px 5px 0px;
+  cursor: pointer;
 }
 
 .lightButton {
@@ -15,6 +16,7 @@
   font-weight: bold;
   padding: 7px 15px;
   border-radius: 0px 5px 5px 0px;
+  cursor: pointer;
 }
 
 /* 입력창 스타일링 */
