@@ -9,7 +9,7 @@ import styles from "./App.module.css";
 function App() {
   const [list, setList] = useState(
     JSON.parse(localStorage.getItem("initialList"))
-  ); //todo list
+  );
   const [filterTitle, setFilterTitle] = useState("All");
 
   useEffect(() => {
@@ -41,20 +41,3 @@ function App() {
 }
 
 export default App;
-
-// list : {title, isChecked}
-
-// const initialList = [
-//   {
-//     title: "공부하기",
-//     isChecked: false,
-//   },
-//   {
-//     title: "강의듣기",
-//     isChecked: false,
-//   },
-//   {
-//     title: "복습하기",
-//     isChecked: true,
-//   },
-// ];

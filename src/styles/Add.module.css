@@ -1,3 +1,4 @@
+/* add 버튼 스타일링 */
 .darkButton {
   background-color: rgb(132, 148, 215);
   border: none;
@@ -16,13 +17,18 @@
   border-radius: 0px 5px 5px 0px;
 }
 
+/* 입력창 스타일링 */
 .textField {
   border: none;
   border-radius: 5px 0px 0px 5px;
   padding: 5px 10px;
   width: 220px;
 }
+.textField:focus {
+  outline: none;
+}
 
+/* 입력창 배경 스타일링 */
 .dark {
   background-color: rgb(30, 30, 45);
   padding: 14px 0px;
@@ -36,8 +42,4 @@
   display: flex;
   justify-content: center;
   border-radius: 0px 0px 20px 20px;
-}
-
-.textField:focus {
-  outline: none;
 }
