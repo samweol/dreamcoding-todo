@@ -13,7 +13,7 @@ function App() {
     <div>
       <DarkModeProvider>
         <Container>
-          <Header />
+          <Header list={list} setList={setList} />
           {list.map((item) => {
             return <Item item={item} list={list} setList={setList} />;
           })}
