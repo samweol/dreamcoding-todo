@@ -8,13 +8,23 @@ import { DarkModeProvider } from "./context/DarkModeContext";
 
 function App() {
   const [list, setList] = useState(initialList); //todo list
+  const [filterTitle, setFilterTitle] = useState("All");
+
+  let tempList = list;
+  if (filterTitle === "All") {
+    tempList = list;
+  } else if (filterTitle === "Active") {
+    tempList = list.filter((item) => item.isChecked !== true);
+  } else {
+    tempList = list.filter((item) => item.isChecked === true);
+  }
 
   return (
     <div>
       <DarkModeProvider>
         <Container>
-          <Header />
-          {list.map((item) => {
+          <Header setFilterTitle={setFilterTitle} filterTitle={filterTitle} />
+          {tempList.map((item) => {
             return <Item item={item} list={list} setList={setList} />;
           })}
           <Add list={list} setList={setList} />
