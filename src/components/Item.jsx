@@ -3,39 +3,42 @@ import { BsTrashFill } from "react-icons/bs";
 import styles from "../styles/Item.module.css";
 import { DarkModeContext } from "../context/DarkModeContext";
 
-export default function Item({ item, list, setList }) {
+export default function Item({ item, onUpdate, onDelete }) {
+  const { id, title, status } = item;
   const { darkMode } = useContext(DarkModeContext);
-  const deleteItem = () => {
-    const tempList = list.filter((i) => i.title !== item.title);
-    setList(tempList);
+
+  const handleChange = (e) => {
+    const status = e.target.checked ? "completed" : "active";
+    onUpdate({ ...item, status });
   };
+
+  const handleDelete = () => {
+    onDelete(item);
+  };
+
   return (
     <div className={styles.item}>
       <input
         type="checkbox"
-        id="checkbox"
-        checked={item.isChecked}
-        onChange={() => {
-          const changeItem = { title: item.title, isChecked: !item.isChecked };
-          const tempList = list.filter((i) => i.title !== item.title);
-          setList([...tempList, changeItem]);
-        }}
+        id={id}
+        checked={status === "completed"}
+        onChange={handleChange}
       />
       <label
-        htmlFor="checkbox"
+        htmlFor={id}
         className={
-          item.isChecked
+          status === "completed"
             ? styles.checked
             : darkMode
             ? styles.darkTitle
             : styles.lightTitle
         }
       >
-        {item.title}
+        {title}
       </label>
       <button
         className={darkMode ? styles.darkButton : styles.lightButton}
-        onClick={deleteItem}
+        onClick={handleDelete}
       >
         <BsTrashFill />
       </button>
